@@ -1,6 +1,6 @@
 $(document).ready(function(){ //variables used in this script is protected from gloable
   var num=0;
-  $('#poke-form').on('submit', function(e) {
+  $('#job-form').on('submit', function(e) {
     var input = $('#poke').val();
 
 $.ajax({
