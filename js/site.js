@@ -1,11 +1,11 @@
 $(document).ready(function(){ //variables used in this script is protected from gloable
   var num=0;
   $('#job-form').on('submit', function(e) {
-    var input = $('#poke').val();
+    var input = $('#job').val();
 
 $.ajax({
       type: "GET",
-      url: 'https://pokeapi.co/api/v2/pokemon/'+input,
+      url: '!!!'+input,
       dataType: "html",
       success: function (results){
        var data = JSON.parse(results);
@@ -14,6 +14,22 @@ $.ajax({
       });
 e.preventDefault();
 });
+
+$('#job-form').on('submit', function(e) {
+  var input = $('#city').val();
+
+$.ajax({
+    type: "GET",
+    url: '!!!'+input,
+    dataType: "html",
+    success: function (results){
+     var data = JSON.parse(results);
+      parseData(data);
+    }
+    });
+e.preventDefault();
+});
+
 
     function parseData(arr) {
         $('#results').empty();
