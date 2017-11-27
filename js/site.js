@@ -39,15 +39,13 @@ e.preventDefault();
         $('#results').css('color', 'white');
         var x;
         for(x=0; x < arr.abilities.length; x++){
-        $('#results').append("<li id="+"id" + x +">" + "pokemon ability: "+arr.abilities[x].ability.name+ "</li>");
+        $('#results').append("<li id="+"id" + x +">" + "job availability: "+arr.abilities[x].ability.name+ "</li>");
         }
-        $('#results').append("<li id="+"id" + (x++) +">" + "Pokemon name: " + arr.name+ "</li>");
-        $('#results').append("<li id="+"id" + (x++) +">" + "Weight is: " + arr.weight+ "</li>");
-        $('#results').append("<li id="+"id" + (x++) +">" + "Height is: " + arr.height+ "</li>");
-        $('#results').append("<li id="+"id" + (x++) +">" +"Pokemon species: "+ arr.species.name+ "</li>");
+        $('#results').append("<li id="+"id" + (x++) +">" + "job name: " + arr.name+ "</li>");
+        $('#results').append("<li id="+"id" + (x++) +">" + "location is: " + arr.weight+ "</li>");
 
         for(var i = 0;i<arr.types.length;i++){
-            $('#results').append("<li>" + "Pokemon type: " + arr.types[i].type.name+ "</li>");
+            $('#results').append("<li>" + "job type: " + arr.types[i].type.name+ "</li>");
         }
 
     }
