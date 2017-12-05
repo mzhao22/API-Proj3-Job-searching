@@ -73,7 +73,8 @@ body {
 }
 
 body {
-   background-image: url("image/background.gif");
+   /*background-image: url("image/background.gif");*/
+	 background-color: black;
  }
 
 h1 {
