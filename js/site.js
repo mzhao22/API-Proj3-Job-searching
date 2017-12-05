@@ -1,54 +1,59 @@
-$(document).ready(function(){ //variables used in this script is protected from gloable
-  var num=0;
-  $('#job-form').on('submit', function(e) {
-    var input = $('#job').val();
+const express = require('express');
+const bodyParser = require('body-parser');
+const request = require('request');
+const app = express();
+const router = express.Router();
+const request = require('request');
+//const apiKey = 'a62e6112-a00b-4e57-bd79-4a09563387ea';
 
-$.ajax({
-      type: "GET",
-      url: '!!!'+input,
-      dataType: "html",
-      success: function (results){
-       var data = JSON.parse(results);
-        parseData(data);
-      }
-      });
-e.preventDefault();
-});
+//Access all of the static files within the ‘public’ folder.
+app.use(express.static('public'));
+//By using body-parser we can make use of the req.body object.
+app.use(bodyParser.urlencoded({ extended: true }));
+//set ejs as rendering engine.
+app.set('view engine', 'ejs')
 
-$('#job-form').on('submit', function(e) {
-  var input = $('#city').val();
+app.get('/', function (req, res) {
+  res.render('index.html', {jobTitle: null, error: null});
+})
 
-$.ajax({
-    type: "GET",
-    url: '!!!'+input,
-    dataType: "html",
-    success: function (results){
-     var data = JSON.parse(results);
-      parseData(data);
+
+
+
+
+/* GET home page. */
+router.post('/', function(req, res) {
+  let keyWords = req.body.job;
+  let cityName = req.body.city;
+  console.log(keyWords);
+  console.log(cityName);
+  const payload = {
+    url: 'https://us.jooble.org/api/a62e6112-a00b-4e57-bd79-4a09563387ea',
+    headers: {
+      'Keywords': 'request',
+      'Authorization': `token ${process.env['GITHUB_USER_READ_TOKEN']}`
     }
+  }
+
+
+  /*
+  request(payload, (error, response, data) => {
+    // console.log('error:', error); // Print the error if one occurred
+    // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    //console.log('data:', data); // Print the data from the GitHub API
+    var a = JSON.parse(data);
+    console.log(a.blog);
+    res.render('index',
+    {
+      title: "GitHub Profile for " + a.name,
+      profile: a
     });
-e.preventDefault();
+  });*/
 });
 
+module.exports = router;
 
-    function parseData(arr) {
-        $('#results').empty();
-        $('#results').css('floate', 'left');
-        $('#results').css('height', '29.125em');
-        $('#results').css('overflow-y', 'auto');
-        $('#results').css('color', 'white');
-        var x;
-        for(x=0; x < arr.abilities.length; x++){
-        $('#results').append("<li id="+"id" + x +">" + "pokemon ability: "+arr.abilities[x].ability.name+ "</li>");
-        }
-        $('#results').append("<li id="+"id" + (x++) +">" + "Pokemon name: " + arr.name+ "</li>");
-        $('#results').append("<li id="+"id" + (x++) +">" + "Weight is: " + arr.weight+ "</li>");
-        $('#results').append("<li id="+"id" + (x++) +">" + "Height is: " + arr.height+ "</li>");
-        $('#results').append("<li id="+"id" + (x++) +">" +"Pokemon species: "+ arr.species.name+ "</li>");
 
-        for(var i = 0;i<arr.types.length;i++){
-            $('#results').append("<li>" + "Pokemon type: " + arr.types[i].type.name+ "</li>");
-        }
-
-    }
-});
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
