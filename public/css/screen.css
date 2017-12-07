@@ -1,0 +1,248 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End Reset CSS */
+/* Begin Site CSS */
+html {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-appearance: none
+}
+
+body {
+	background-color: #F5F5F5;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.8em;
+	color: #F08080;
+	padding-top: 2em;
+	padding-bottom: 3em;
+}
+
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+.main {
+    position: relative;
+    min-height: 100%;
+    min-width: 996px;
+    margin: auto
+}
+
+.serp {
+    width: 80%;
+    height: 100%;
+    margin: auto
+}
+
+.search_form_pnl {
+    position: relative;
+    width: 100%;
+    text-align: center
+}
+
+.search_form input {
+    height: 26px;
+    width: 295px;
+    border: 1px solid #6eb5e8;
+    margin: 5px 13px 6px 0;
+    color: #393d40;
+    font-size: 18px;
+    padding: 4px
+}
+
+.search_form input:-ms-clear {
+    display: none
+}
+
+.search_form .button {
+    display: inline-block;
+    height: 34px;
+    margin: 34px 0 0;
+    text-decoration: none;
+    width: auto;
+    padding: 0 15px;
+    vertical-align: top;
+    cursor: pointer;
+    color: #DB7093
+}
+
+.button {
+    margin: 0;
+    padding: 0
+}
+
+.button p {
+    font-size: 18px;
+    color: #FA8072;
+    text-align: center;
+    padding-top: 5px
+}
+
+.clear,.clr_brdr {
+    clear: both
+}
+
+.clear {
+    width: 0;
+    height: 0
+}
+
+input[type=submit] .org-btn {
+    height: 50px;
+    display: block;
+    background: #1c7ebc;
+    border: 10px solid #10679f;
+    position: relative;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: orange;
+    text-align: center;
+    font: Arial;
+		font-size: 1.2em;
+		padding-bottom: 1.2em
+}
+
+.buttons_confirm {
+    padding-top: 25px
+}
+
+.new-sf_pnl .stopper,.new-sf_pnl form {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1 auto;
+    -webkit-flex: 1 auto;
+    flex: 1 auto;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    position: relative
+}
+
+.new-sf_pnl form .column {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1 auto;
+    -webkit-flex: 1 auto;
+    flex: 1 auto;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 18px 0 17px 0
+}
+
+.new-sf_pnl form .column:first-child {
+    margin-right: 6px
+}
+
+.new-sf_pnl form .column.region-col {
+    margin-left: 6px
+}
+
+.new-sf_pnl form .column input {
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    height: 35px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 9px;
+    font-size: 14px
+}
+
+.new-sf_pnl form .column input:focus {
+    border: 1px solid #1c7ebc
+}
+
+.new-sf_pnl .region-tooltip {
+    top: 61px
+}
+
+.new-sf_pnl form .button-wrap {
+    padding: 18px 0 0 20px
+}
+
+.new-sf_pnl form .button-wrap input {
+    min-width: 110px;
+    background: #FA8072;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    cursor: pointer
+}

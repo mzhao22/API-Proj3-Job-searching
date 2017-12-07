@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Where you build up your dream job</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,maximum-scale=2.0" />
+  <link href="/css/screen.css" rel="stylesheet" />
+</head>
+<body>
+  <h1> Welcome! Please type in the job you want, and where you wish to locate! </h1>
+
+<div class="serp">
+  <div class="serp_cont">
+    <div class="search_form_pnl new-sf_pnl">
+	  <form id="searchForm" action="/" method="POST">
+
+    <div class="column">
+		<input autocomplete="off" id="job" name="job" placeholder="Job Title" type="text" value="" />
+    </div>
+
+	  <div class="column region-col">
+		<input autocomplete="off" id="city" name="city" placeholder="City, State" type="text" value="" />
+    <div class="clicker" id="Clear" data-href="">
+	      <a id="aHelp" style="width: 16px; height: 16px;"></a>
+		</div>
+	  </div>
+
+	  <div class="button-wrap">
+		<input type="submit" id="lbSearch" class="button" value="Get the job!" />
+	  </div>
+
+	  <div class="clear"></div>
+
+	  <input data-val="true" data-val-required="The Page field is required." id="Page" name="Page" type="hidden" value="None" />
+	  </form>
+
+	</div>
+  </div>
+
+  <div class="serp">
+    <% if(profile ) { %>
+    <table class="search_form_pnl">
+        <thead style="text-align: center">
+            <tr>
+                <th>Job</th>
+                <th>Location</th>
+                <th>Company<th>
+            </tr>
+        </thead>
+        <tbody id="listTBody" >
+            <% profile.jobs.forEach(function(val, key) { %>
+               <tr style="margin-top: 20px; margin-bottom:50px">
+                 <td><a href='<%=val.link%>'><%=val.title%></a></td>
+                 <td><%=val.location%></td>
+                 <td><%=val.company%></td>
+               </tr>
+            <%})%>
+        </tbody>
+    </table>
+    <% } %>
+  </div>
+
+</div>
+
+</body>
+</html>
