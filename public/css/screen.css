@@ -49,6 +49,7 @@ table {
 
 /* End Reset CSS */
 /* Begin Site CSS */
+
 html {
     margin: 0;
     padding: 0;
@@ -72,16 +73,6 @@ h1 {
 	color: #F08080;
 	padding-top: 2em;
 	padding-bottom: 3em;
-}
-
-
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0
 }
 
 .main {
@@ -113,10 +104,6 @@ h1 {
     padding: 4px
 }
 
-.search_form input:-ms-clear {
-    display: none
-}
-
 .search_form .button {
     display: inline-block;
     height: 34px;
@@ -141,13 +128,10 @@ h1 {
     padding-top: 5px
 }
 
-.clear,.clr_brdr {
-    clear: both
-}
-
 .clear {
     width: 0;
-    height: 0
+    height: 0;
+		clear: both
 }
 
 input[type=submit] .org-btn {
@@ -171,7 +155,7 @@ input[type=submit] .org-btn {
     padding-top: 25px
 }
 
-.new-sf_pnl .stopper,.new-sf_pnl form {
+.new-sf_pnl form {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -221,14 +205,6 @@ input[type=submit] .org-btn {
     box-sizing: border-box;
     padding: 0 9px;
     font-size: 14px
-}
-
-.new-sf_pnl form .column input:focus {
-    border: 1px solid #1c7ebc
-}
-
-.new-sf_pnl .region-tooltip {
-    top: 61px
 }
 
 .new-sf_pnl form .button-wrap {
